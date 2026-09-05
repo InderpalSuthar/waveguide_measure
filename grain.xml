@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grain>
+  <name>waveguide_measure</name>
+  <version>1.0.0</version>
+  <title>Waveguide Length Measurement Tool</title>
+  <author>Your Name</author>
+  <license>MIT</license>
+  <description>Calculates exact layout lengths for configured waveguide traces.</description>
+  <doc>README.md</doc>
+  <icon>icon.png</icon>
+</grain>
