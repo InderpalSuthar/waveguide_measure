@@ -3,7 +3,7 @@
   <name>waveguide_measure</name>
   <version>1.0.0</version>
   <title>Waveguide Length Measurement Tool</title>
-  <author>Your Name</author>
+  <author>Inderpal Suthar</author>
   <license>MIT</license>
   <description>Calculates exact layout lengths for configured waveguide traces.</description>
   <doc>README.md</doc>
