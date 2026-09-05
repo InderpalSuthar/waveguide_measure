@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<klayout-macro>
+ <description>Measure Waveguide Length</description>
+ <version>1.0</version>
+ <category>pymacros</category>
+ <prolog/>
+ <epilog/>
+ <doc/>
+ <autorun>true</autorun>
+ <autorun-early>false</autorun-early>
+ <shortcut/>
+ <show-in-menu>true</show-in-menu>
+ <group-name/>
+ <menu-path>tools_menu.end</menu-path>
+ <interpreter>python</interpreter>
+ <dsl-interpreter-name/>
+ <text>
+import pya
+import os
+from . import waveguide_measure
+
+def register_menu_item():
+    app = pya.Application.instance()
+    mw = app.main_window()
+    
+    # Locate package directory safely to load icon.png
+    salt_dir = pya.Application.instance().get_config("salt-dir")
+    icon_path = os.path.join(salt_dir, "waveguide_measure", "icon.png")
+    
+    action = pya.QAction("Measure Waveguide Length", mw)
+    if os.path.exists(icon_path):
+        action.icon = pya.QIcon(icon_path)
+        
+    action.on_triggered(waveguide_measure.measure_total_length_only)
+    
+    # Add to Tools menu
+    mw.menu().insert_item("tools_menu.end", "waveguide_measure_action", action)
+
+register_menu_item()
+ </text>
+</klayout-macro>
